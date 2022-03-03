@@ -1,5 +1,5 @@
 
 K
 Assets/Scenes/MouseOrbit.cs,2\7\27f55ca620d54e2a4e557fafa63d4efd68cf7e1f
-G
-Assets/TouchAndMouse.cs,3\f\3f0aaa9c551d885a60df21e691ff252315b52e69
+I
+Assets/Scripts/Compass.cs,6\9\69cb54ce1c9b53f045fa7ebbba33e821bbe544e4
