@@ -1,41 +1,26 @@
-
-    using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class DOF_Controll : MonoBehaviour
-{
+public class DOF_Controll : MonoBehaviour {
 
-    PostProcessVolume Volume;
-    DepthOfField DOF;
+    private PostProcessVolume volume;
+    private DepthOfField depthOfField;
 
-    public PostProcessProfile PostProfile;
-    public GameObject TargetObject;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        PostProfile.TryGetSettings(out DOF);
-        //DOF.active = true;
-
-    }
-
+    [SerializeField] private PostProcessProfile postProcessingProfile;
+    [SerializeField] private GameObject targetObject;
     
-    // Update is called once per frame
-    void Update()
-    {
-        float dist = Vector3.Distance(TargetObject.transform.position, transform.position);
-        DOF.focusDistance.value = dist;
+    void Start() {
+        postProcessingProfile.TryGetSettings(out depthOfField);
+    }
+    
+    void Update() {
+        var dist = Vector3.Distance(targetObject.transform.position, transform.position);
+        depthOfField.focusDistance.value = dist;
     }
 
-    public void SetPosition()
-    {
-        float dist = Vector3.Distance(TargetObject.transform.position, transform.position);
+    public void SetPosition() {
+        var dist = Vector3.Distance(targetObject.transform.position, transform.position);
         GetComponent<Lean.Common.LeanMaintainDistance>().Distance = dist;
-
     }
 
 }
-

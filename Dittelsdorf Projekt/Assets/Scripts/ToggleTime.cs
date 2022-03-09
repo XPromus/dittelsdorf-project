@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class ToggleTime : MonoBehaviour
 
     [SerializeField] private List<Year> years;
     [Space]
+    [Label("Map Switch")]
     [SerializeField] private Toggle mapToggle;
     [SerializeField] private GameObject landscape;
 
@@ -51,13 +53,7 @@ public class ToggleTime : MonoBehaviour
     }
 
     public void ChangeMap() {
-        
-        if (mapToggle.isOn) {
-            landscape.GetComponent<Renderer>().material = years[currentActiveGroup].drawnMap;
-        } else {
-            landscape.GetComponent<Renderer>().material = years[currentActiveGroup].realMap;
-        }
-        
+        landscape.GetComponent<Renderer>().material = mapToggle.isOn ? years[currentActiveGroup].drawnMap : years[currentActiveGroup].realMap;
     }
 
 }

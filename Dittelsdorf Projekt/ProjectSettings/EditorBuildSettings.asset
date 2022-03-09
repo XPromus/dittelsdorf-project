@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MapNavigation.unity
+    path: Assets/Scenes/MapNavigation.unity
     guid: 0fe5b02294207b5418f50a5d604c1b71
   m_configObjects: {}

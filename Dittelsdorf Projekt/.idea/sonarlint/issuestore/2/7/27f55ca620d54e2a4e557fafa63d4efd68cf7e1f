@@ -1,10 +1,0 @@
-
-acsharpsquid:S2589"DChange this condition so that it does not always evaluate to 'true'.(† Çò
-Fcsharpsquid:S3903")Move 'MouseOrbit' into a named namespace.(úÌ¹ˆ
-fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¯ê€’úÿÿÿÿ
-fcsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(…€ÉÓþÿÿÿÿ
-acsharpsquid:S1104
-"DMake this field 'private' and encapsulate it in a 'public' property.(ƒ÷‘ê
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(üÐ©Ë
-fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ë“î‡ûÿÿÿÿ
-csharpsquid:S1450"]Remove the field 'targetPosition' and declare it as a local variable in the relevant methods.(È¡ØÇüÿÿÿÿ
