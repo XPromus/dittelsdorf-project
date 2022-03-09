@@ -35879,7 +35879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1fa55b33e1b813f4f8fe6a3337fc4376, type: 3}
       propertyPath: m_Name
-      value: Variante_10_02
+      value: World
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1fa55b33e1b813f4f8fe6a3337fc4376, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -46096,6 +46096,10 @@ PrefabInstance:
     - target: {fileID: 8878174549250823055, guid: 1fa55b33e1b813f4f8fe6a3337fc4376, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878413866808619685, guid: 1fa55b33e1b813f4f8fe6a3337fc4376, type: 3}
+      propertyPath: m_Name
+      value: Buildings
       objectReference: {fileID: 0}
     - target: {fileID: 8878413866808619685, guid: 1fa55b33e1b813f4f8fe6a3337fc4376, type: 3}
       propertyPath: m_StaticEditorFlags
