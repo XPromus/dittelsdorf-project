@@ -29,6 +29,7 @@ public class ToggleTime : MonoBehaviour
     }
 
     private void SetToggleButtonText() {
+        //TODO: Auto generate the User Interface.
         throw new NotImplementedException();
     }
 
