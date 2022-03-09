@@ -54688,6 +54688,7 @@ GameObject:
   - component: {fileID: 1757700752}
   - component: {fileID: 1757700753}
   - component: {fileID: 1757700754}
+  - component: {fileID: 1757700755}
   m_Layer: 5
   m_Name: toggle_group
   m_TagString: Untagged
@@ -54744,6 +54745,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fab1c2f1dd96b4699f5558ed7c28d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maps:
+  - realMap: {fileID: 2100000, guid: e60dd7cb1f416fb45bc4ecc55191e97b, type: 2}
+    drawnMap: {fileID: 0}
+  - realMap: {fileID: 2100000, guid: c2c6a7de546330f4da474945218aa29c, type: 2}
+    drawnMap: {fileID: 0}
+  - realMap: {fileID: 2100000, guid: 965078a827021184d9b6b44a2e6fe268, type: 2}
+    drawnMap: {fileID: 0}
+  - realMap: {fileID: 2100000, guid: bcb88ef5610432d458df8c25ecbcadff, type: 2}
+    drawnMap: {fileID: 0}
+  - realMap: {fileID: 2100000, guid: 6e885f2b3fc809045b1681be921c4a6a, type: 2}
+    drawnMap: {fileID: 0}
   Buildings:
   - {fileID: 1250784518}
   - {fileID: 758019572}
@@ -54751,12 +54763,21 @@ MonoBehaviour:
   - {fileID: 1419800788}
   - {fileID: 2073258280}
   Landscape: {fileID: 1944516199}
-  Map:
-  - {fileID: 2100000, guid: e60dd7cb1f416fb45bc4ecc55191e97b, type: 2}
-  - {fileID: 2100000, guid: c2c6a7de546330f4da474945218aa29c, type: 2}
-  - {fileID: 2100000, guid: 965078a827021184d9b6b44a2e6fe268, type: 2}
-  - {fileID: 2100000, guid: bcb88ef5610432d458df8c25ecbcadff, type: 2}
-  - {fileID: 2100000, guid: 6e885f2b3fc809045b1681be921c4a6a, type: 2}
+  realisticMap: []
+--- !u!114 &1757700755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757700751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe5fab3316fdc74cbc0217b5868f727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  mapMaterial: []
 --- !u!1 &1759588406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3825117362556486224, guid: 1fa55b33e1b813f4f8fe6a3337fc4376, type: 3}

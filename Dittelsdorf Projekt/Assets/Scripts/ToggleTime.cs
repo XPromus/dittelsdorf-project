@@ -1,13 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ToggleTime : MonoBehaviour
 {
-    public List<GameObject> Buildings;
-    public GameObject Landscape;
-    public List<Material> Map;
 
+    [Serializable]
+    public struct MapGroup {
+        public Material realMap;
+        public Material drawnMap;
+    }
+
+    [SerializeField] private List<MapGroup> maps;
+    [SerializeField] private List<GameObject> Buildings;
+    [SerializeField] private GameObject Landscape;
+    
     void Start()
     {
         SetTimeTo(0);
@@ -22,7 +30,7 @@ public class ToggleTime : MonoBehaviour
         }
 
         Buildings[atime].SetActive(true);
-        Landscape.GetComponent<Renderer>().material = Map[atime];
+        Landscape.GetComponent<Renderer>().material = maps[atime].realMap;
     }
 
 }
