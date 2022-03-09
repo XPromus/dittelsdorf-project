@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ToggleTime : MonoBehaviour
@@ -19,18 +17,24 @@ public class ToggleTime : MonoBehaviour
     [SerializeField] private List<Year> years;
     [Space]
     [SerializeField] private Toggle mapToggle;
-    [SerializeField] private GameObject Landscape;
+    [SerializeField] private GameObject landscape;
 
     private int currentActiveGroup;
     
-    void Start()
-    {
+    void Start() {
+        SetToggleButtonText();
         SetTimeTo(0);
     }
 
     private void SetToggleButtonText() {
-        //TODO: Auto generate the User Interface.
-        throw new NotImplementedException();
+        
+        var childrenCount = transform.childCount;
+
+        for (var i = 0; i < childrenCount; i++) {
+            var child = transform.GetChild(i);
+            child.GetComponentInChildren<Text>().text = years[i].year;
+        }
+        
     }
 
     public void SetTimeTo(int atime) {
@@ -49,9 +53,9 @@ public class ToggleTime : MonoBehaviour
     public void ChangeMap() {
         
         if (mapToggle.isOn) {
-            Landscape.GetComponent<Renderer>().material = years[currentActiveGroup].drawnMap;
+            landscape.GetComponent<Renderer>().material = years[currentActiveGroup].drawnMap;
         } else {
-            Landscape.GetComponent<Renderer>().material = years[currentActiveGroup].realMap;
+            landscape.GetComponent<Renderer>().material = years[currentActiveGroup].realMap;
         }
         
     }
