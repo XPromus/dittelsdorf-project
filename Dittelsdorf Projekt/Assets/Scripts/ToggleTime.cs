@@ -22,6 +22,7 @@ public class ToggleTime : MonoBehaviour
     [SerializeField] private GameObject landscape;
 
     private int currentActiveGroup;
+    private bool currentMap = false;
     
     void Start() {
         SetToggleButtonText();
@@ -53,7 +54,8 @@ public class ToggleTime : MonoBehaviour
     }
 
     public void ChangeMap() {
-        landscape.GetComponent<Renderer>().material = mapToggle.isOn ? years[currentActiveGroup].drawnMap : years[currentActiveGroup].realMap;
+        landscape.GetComponent<Renderer>().material = currentMap ? years[currentActiveGroup].drawnMap : years[currentActiveGroup].realMap;
+        currentMap = !currentMap;
     }
 
 }
