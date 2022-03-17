@@ -22,7 +22,7 @@ public class ToggleTime : MonoBehaviour
     [SerializeField] private GameObject landscape;
 
     private int currentActiveGroup;
-    private bool currentMap = false;
+    private bool currentMap = true;
     
     void Start() {
         SetToggleButtonText();
@@ -49,7 +49,6 @@ public class ToggleTime : MonoBehaviour
         }
         
         years[currentActiveGroup].buildings.SetActive(true);
-        ChangeMap();
         
     }
 

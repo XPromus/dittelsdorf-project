@@ -17,7 +17,7 @@ namespace HouseTextures {
 
 		[SerializeField] private List<HouseMaterial> houseMaterials;
 
-		private bool currentTexture = true;
+		private bool currentTexture = false;
 	
 		public void ChangeTexture() {
 
