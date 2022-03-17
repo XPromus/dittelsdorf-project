@@ -21,7 +21,6 @@ public class ToggleTime : MonoBehaviour
     [SerializeField] private GameObject landscape;
 
     private int currentActiveGroup;
-    private bool currentMap = true;
     
     void Start() {
         SetToggleButtonText();
