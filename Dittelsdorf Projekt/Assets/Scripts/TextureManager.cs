@@ -22,7 +22,7 @@ namespace HouseTextures {
 		public void ChangeTexture() {
 
 			foreach (var material in houseMaterials) {
-				material.Material.mainTexture = currentTexture ? material.Texture_2 : material.Texture_1;
+				material.Material.mainTexture = currentTexture ? material.Texture_1 : material.Texture_2;
 			}
 			
 			currentTexture = !currentTexture;
@@ -32,7 +32,7 @@ namespace HouseTextures {
 		public void ChangeRoofTexture() {
 			foreach (var material in houseMaterials) {
 				if (material.HousePart == HouseParts.ROOF) {
-					material.Material.mainTexture = currentTexture ? material.Texture_2 : material.Texture_1;
+					material.Material.mainTexture = currentTexture ? material.Texture_1 : material.Texture_2;
 				}
 			}
 		}
@@ -40,7 +40,7 @@ namespace HouseTextures {
 		public void ChangeWallTexture() {
 			foreach (var material in houseMaterials) {
 				if (material.HousePart == HouseParts.WALL) {
-					material.Material.mainTexture = currentTexture ? material.Texture_2 : material.Texture_1;
+					material.Material.mainTexture = currentTexture ? material.Texture_1 : material.Texture_2;
 				}
 			}
 		}
