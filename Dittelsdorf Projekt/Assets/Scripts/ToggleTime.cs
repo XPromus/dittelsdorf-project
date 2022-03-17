@@ -12,7 +12,7 @@ public class ToggleTime : MonoBehaviour
         public string year;
         public GameObject buildings;
         public Material realMap;
-        public Material drawnMap;
+        //public Material drawnMap;
     }
 
     [SerializeField] private List<Year> years;
@@ -50,11 +50,6 @@ public class ToggleTime : MonoBehaviour
         
         years[currentActiveGroup].buildings.SetActive(true);
         
-    }
-
-    public void ChangeMap() {
-        landscape.GetComponent<Renderer>().material = currentMap ? years[currentActiveGroup].drawnMap : years[currentActiveGroup].realMap;
-        currentMap = !currentMap;
     }
 
     public void ChangeMap(Material map) {

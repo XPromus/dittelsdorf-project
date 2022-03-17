@@ -24,12 +24,12 @@ public class SecondaryCameraUI : MonoBehaviour {
 	private void Start() {
 		sizeSlider.minValue = minSizeMultiplier;
 		sizeSlider.maxValue = maxSizeMultiplier;
-		cameraRenderImage.rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
 	}
 
 	private void Update() {
 		var size = defaultSize * sizeSlider.value;
 		renderTransform.sizeDelta = new Vector2(size, size);
+		cameraRenderImage.rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
 	}
 
 }
