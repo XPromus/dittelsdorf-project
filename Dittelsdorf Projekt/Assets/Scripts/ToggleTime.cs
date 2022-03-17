@@ -18,7 +18,6 @@ public class ToggleTime : MonoBehaviour
     [SerializeField] private List<Year> years;
     [Space]
     [Label("Map Switch")]
-    [SerializeField] private Toggle mapToggle;
     [SerializeField] private GameObject landscape;
 
     private int currentActiveGroup;

@@ -9,45 +9,50 @@ namespace HouseTextures {
 	
 		[Serializable]
 		public struct HouseMaterial {
-			public HouseParts HousePart;
 			public Material Material;
-			public Texture2D Texture_1;
-			public Texture2D Texture_2;
+			public List<Texture2D> textures;
 		}
 
 		[SerializeField] private List<HouseMaterial> houseMaterials;
 
-		private bool currentTexture = false;
-	
-		public void ChangeTexture() {
+		private int currentTextureIndex = 0;
+		private int numberOfTextures;
 
-			foreach (var material in houseMaterials) {
-				material.Material.mainTexture = currentTexture ? material.Texture_1 : material.Texture_2;
+		private void Start() {
+			
+			var test = houseMaterials[0].textures.Count;
+
+			foreach (var houseMaterial in houseMaterials) {
+				if (houseMaterial.textures.Count != test) {
+					Debug.LogError("Each texture list must contain the same amount of textures");
+				}
 			}
 			
-			currentTexture = !currentTexture;
+			numberOfTextures = test;
+			ChangeTexture(0);
+			
+		}
+	
+		public void CycleTextures() {
+			
+			if (currentTextureIndex < numberOfTextures - 1) {
+				currentTextureIndex++;
+			} else {
+				currentTextureIndex = 0;
+			}
+			
+			ChangeTexture(currentTextureIndex);
+			
+		}
 		
-		}
-
-		public void ChangeRoofTexture() {
+		private void ChangeTexture(int index) {
+			
 			foreach (var material in houseMaterials) {
-				if (material.HousePart == HouseParts.ROOF) {
-					material.Material.mainTexture = currentTexture ? material.Texture_1 : material.Texture_2;
-				}
+				material.Material.mainTexture = material.textures[index];
 			}
-		}
 
-		public void ChangeWallTexture() {
-			foreach (var material in houseMaterials) {
-				if (material.HousePart == HouseParts.WALL) {
-					material.Material.mainTexture = currentTexture ? material.Texture_1 : material.Texture_2;
-				}
-			}
-		}
-
-		public enum HouseParts {
-			ROOF,
-			WALL
+			currentTextureIndex = index;
+			
 		}
 	
 	}
