@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,17 +10,26 @@ public class SecondaryCameraUI : MonoBehaviour {
 		public int height;
 	}
 
-	[SerializeField] private AspectRatio renderImageAspectRatio;
-	
-	private RawImage cameraRenderImage;
-	private RectTransform renderTransform;
+	[Header("Size")]
+	[SerializeField] private float minSizeMultiplier = 0.5f;
+	[SerializeField] private float maxSizeMultiplier = 2f;
+	[SerializeField] private float defaultSize = 256f;
+
+	[Header("Objects")] 
+	[SerializeField] private Slider sizeSlider;
+	[SerializeField] private RawImage cameraRenderImage;
+	[SerializeField] private RectTransform renderTransform;
 	
 	
 	private void Start() {
-		
-		cameraRenderImage = GetComponent<RawImage>();
-		renderTransform = GetComponent<RectTransform>();
-		renderTransform.sizeDelta = new Vector2(cameraRenderImage.texture.width, cameraRenderImage.texture.height);
-
+		sizeSlider.minValue = minSizeMultiplier;
+		sizeSlider.maxValue = maxSizeMultiplier;
+		cameraRenderImage.rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
 	}
+
+	private void Update() {
+		var size = defaultSize * sizeSlider.value;
+		renderTransform.sizeDelta = new Vector2(size, size);
+	}
+
 }

@@ -57,4 +57,12 @@ public class ToggleTime : MonoBehaviour
         currentMap = !currentMap;
     }
 
+    public void ChangeMap(Material map) {
+        landscape.GetComponent<Renderer>().material = map;
+    }
+    
+    public void SetNormalMap() {
+        ChangeMap(years[currentActiveGroup].realMap);
+    }
+
 }
